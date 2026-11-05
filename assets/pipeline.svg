@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="270" viewBox="0 0 1240 270">
+<rect width="1240" height="270" rx="24" fill="#f4f8fa"/>
+<text x="46" y="46" font-size="24" fill="#17364a" font-family="Arial,sans-serif" font-weight="700">De la molécule à la prédiction BSEP</text>
+<text x="46" y="73" font-size="14" fill="#587080" font-family="Arial,sans-serif">Classification supervisée • jeu de données Morgan–Warner • 660 composés</text>
+<g font-family="Arial,sans-serif">
+<rect x="39" y="102" width="203" height="116" rx="17" fill="#ffffff" stroke="#cfdfe6"/><text x="140" y="141" text-anchor="middle" font-size="22" font-weight="700" fill="#185879">SMILES</text><text x="140" y="169" text-anchor="middle" font-size="14" fill="#627988">Structure chimique</text><text x="140" y="190" text-anchor="middle" font-size="13" fill="#627988">+ étiquette active</text>
+<rect x="289" y="102" width="203" height="116" rx="17" fill="#ffffff" stroke="#cfdfe6"/><text x="390" y="141" text-anchor="middle" font-size="22" font-weight="700" fill="#185879">RDKit</text><text x="390" y="169" text-anchor="middle" font-size="14" fill="#627988">SMILES → molécule</text><text x="390" y="190" text-anchor="middle" font-size="13" fill="#627988">Validation</text>
+<rect x="539" y="102" width="203" height="116" rx="17" fill="#ffffff" stroke="#cfdfe6"/><text x="640" y="141" text-anchor="middle" font-size="22" font-weight="700" fill="#185879">ECFP4</text><text x="640" y="169" text-anchor="middle" font-size="14" fill="#627988">Fingerprint Morgan</text><text x="640" y="190" text-anchor="middle" font-size="13" fill="#627988">1 024 bits</text>
+<rect x="789" y="102" width="203" height="116" rx="17" fill="#ffffff" stroke="#cfdfe6"/><text x="890" y="141" text-anchor="middle" font-size="22" font-weight="700" fill="#185879">SVM</text><text x="890" y="169" text-anchor="middle" font-size="14" fill="#627988">Linéaire / RBF</text><text x="890" y="190" text-anchor="middle" font-size="13" fill="#627988">Validation croisée</text>
+<rect x="1038" y="102" width="166" height="116" rx="17" fill="#e4f3ee" stroke="#a3d2be"/><text x="1121" y="141" text-anchor="middle" font-size="21" font-weight="700" fill="#167454">BSEP</text><text x="1121" y="169" text-anchor="middle" font-size="14" fill="#315c4d">0 ou 1</text><text x="1121" y="190" text-anchor="middle" font-size="12" fill="#315c4d">Inhibition</text>
+</g>
+<g stroke="#6a8797" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M250 160h28m-7-7 7 7-7 7"/><path d="M500 160h28m-7-7 7 7-7 7"/><path d="M750 160h28m-7-7 7 7-7 7"/><path d="M1000 160h27m-7-7 7 7-7 7"/>
+</g><text x="46" y="248" font-size="12" fill="#587080" font-family="Arial,sans-serif">BSEP : Bile Salt Export Pump (ABCB11) ; l’inhibition ne résume pas toute la toxicité du foie.</text>
+</svg>
