@@ -121,7 +121,11 @@ legendes = [
 image_molecules = Draw.MolsToGridImage(
     molecules, molsPerRow=3, subImgSize=(290, 210), legends=legendes
 )
-image_molecules.save(DOSSIER_FIGURES / "02_exemples_molecules.png")
+# RDKit renvoie selon le contexte une image PIL ou un objet IPython.display.Image.
+if hasattr(image_molecules, "save"):
+    image_molecules.save(str(DOSSIER_FIGURES / "02_exemples_molecules.png"))
+else:
+    (DOSSIER_FIGURES / "02_exemples_molecules.png").write_bytes(image_molecules.data)
 # Dans un notebook, cette dernière expression affiche la grille.
 image_molecules
 
