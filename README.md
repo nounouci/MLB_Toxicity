@@ -90,3 +90,28 @@ Un seuil exploratoire sélectionné sur l’entraînement en maximisant F2 a aug
 ## Limites
 
 Ce modèle ne remplace pas les mesures biologiques. Le jeu public réunit deux sources expérimentales aux seuils de classification différents. Un test de généralisation par **scaffold split** serait une extension pertinente.
+
+
+## Réseau de neurones MLP — complément du SVM
+
+Un **MLP (perceptron multicouche)** a été ajouté pour tester une approche non linéaire avec les mêmes fingerprints ECFP4 de 1 024 bits. Le modèle est entraîné avec `MLPClassifier` de scikit-learn, `early_stopping` et validation croisée à cinq plis.
+
+- [Notebook MLP avec les étapes et graphiques](notebooks/02_MLP_BSEP.ipynb)
+- [Script Python MLP](src/mlp_bsep.py)
+- [Résultats MLP en validation croisée](results/mlp_benchmark_cv.csv)
+- [Résultats MLP sur le test](results/mlp_benchmark_test.csv)
+
+### Première comparaison SVM / MLP
+
+| Mesure (132 molécules de test) | SVM RBF | MLP |
+|---|---:|---:|
+| ROC-AUC | **0,845** | 0,783 |
+| Average Precision | **0,822** | 0,775 |
+| Rappel des inhibiteurs | **76,3 %** | 62,7 % |
+| F1-score | **0,763** | 0,661 |
+| Faux négatifs | **14** | 22 |
+
+**Interprétation :** sur cette partition aléatoire, le SVM obtient de meilleurs scores que le MLP testé. Ce résultat ne signifie pas que tous les réseaux de neurones sont inférieurs aux SVM. Le dataset est petit (660 molécules), la comparaison doit rester liée à cette séparation et à ces hyperparamètres.
+
+Pour reproduire les expériences, garder **exactement les mêmes molécules dans le test**. Les modèles ne permettent pas d'affirmer qu'un médicament est globalement toxique ou sûr.
+
