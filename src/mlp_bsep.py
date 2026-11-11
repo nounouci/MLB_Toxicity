@@ -35,7 +35,7 @@ chemins = [Path("data/morgan_warner_combined_bsep_data.csv"),
 csv_local = next((p for p in chemins if p.exists()), None)
 df = pd.read_csv(csv_local if csv_local is not None else URL)
 print(df.shape)
-display(df.head())
+print(df.head().to_string(index=False))
 print(df["active"].value_counts().sort_index())
 
 fig, ax = plt.subplots(figsize=(6, 4))
